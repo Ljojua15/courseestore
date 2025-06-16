@@ -43,14 +43,23 @@ $serch-bar-height: 36px;
         }}
     }
     &__icons{
+        color: wheat;
         width: 20%;
         height: 100%;
         display: flex;
-        justify-content: center;
-        align-items: center;~
-        
-        div{
-            color: white;
-        }
+        align-items: center;
+        justify-content: space-around;
+        text-align: right;  
+        margin: 1.7em 0.2em;    
+       .svg-inline--fa {
+        height: 20px;
+       }
+        h4{
+            a{
+                text-decoration: none;
+                color: white;
+            }
+        }   
+   
     }
 }
