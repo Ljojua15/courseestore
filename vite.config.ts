@@ -1,10 +1,10 @@
-import { defineConfig } from 'vite';
-import { join } from 'path';
+// import { defineConfig } from 'vite';
+// import { join } from 'path';
 
-export default defineConfig({
-  resolve: {
-    alias: {
-      "@": join(__dirname, "src")
-    }
-  }
-});
+// export default defineConfig({
+//   resolve: {
+//     alias: {
+//       "@": join(__dirname, "src")
+//     }
+//   }
+// });

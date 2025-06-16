@@ -1,0 +1,18 @@
+<div class="layout-header">
+    <div class="layout-header__row row">
+        <div class="layout-header__row--brand my-1">
+            <h1>estore</h1>
+        </div>
+        <div class="layout-header__row--search p-0 my-4 w-50 h-30 bg-white">
+            <select class="drowdown p-0 m-0" >
+                <option *ngFor="let option of options">{{option}}</option>
+            </select>
+            <input class="form-control search-box" placeholder="search...">
+            <button class="search-button h-30"><fa-icon [icon]="faSearch"></fa-icon></button>
+        </div>
+        <div class="layout-header__icons">
+            <div>log in / sing in</div>
+        </div>
+        
+    </div>
+</div>

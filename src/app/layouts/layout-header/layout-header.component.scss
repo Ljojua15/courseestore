@@ -1,0 +1,56 @@
+@use '../../../assets/mixins/mixins.scss' as *;
+
+$serch-bar-color: rgb(148, 147, 147);
+$serch-bar-border: none;
+$serch-bar-height: 36px;
+.layout-header{
+    max-width: 100%;
+    box-shadow: 5px 5px 20px gray;
+    background-color: #1F2937;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    &__row{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        &--brand{
+            color: white;
+            margin-left: 2%;
+            padding: 10px;
+            width: 20%;
+            cursor: pointer;
+            font-size: 30px;}
+        &--search{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        .drowdown{
+            height: $serch-bar-height;
+            cursor: pointer;
+            border: $serch-bar-border;
+            background-color: $serch-bar-color;
+        }
+        input{
+            border: unset;
+        }
+        button{
+            height: $serch-bar-height;
+            width: 80px;
+            border: $serch-bar-border;
+            background-color: $serch-bar-color;
+        }}
+    }
+    &__icons{
+        width: 20%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;~
+        
+        div{
+            color: white;
+        }
+    }
+}
