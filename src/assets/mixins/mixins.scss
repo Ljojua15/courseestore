@@ -1,16 +1,15 @@
-@mixin flex($just:center,$align:center,$direct:row){
-    display: flex;
-    justify-content: $just;
-    align-items: $align;
-    flex-direction: $direct;
+@mixin flex($just: center, $align: center, $direct: row) {
+  display: flex;
+  justify-content: $just;
+  align-items: $align;
+  flex-direction: $direct;
 }
 
-@mixin mob($max-width: 1024px ){
-    @media (max-width: $max-width) {
-        @content
-    }
+@mixin mob($max-width: 1024px) {
+  @media (max-width: $max-width) {
+    @content;
+  }
 }
-
 
 @mixin overlay() {
   position: fixed;

@@ -7,9 +7,8 @@ describe('LayoutHeaderComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [LayoutHeaderComponent]
-    })
-    .compileComponents();
+      imports: [LayoutHeaderComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(LayoutHeaderComponent);
     component = fixture.componentInstance;
