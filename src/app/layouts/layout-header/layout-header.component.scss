@@ -15,14 +15,16 @@ $serch-bar-height: 36px;
         display: flex;
         align-items: center;
         justify-content: space-around;
-        &--brand{
-            color: white;
-            margin-left: 2%;
-            padding: 10px;
-            width: 20%;
-            cursor: pointer;
-            font-size: 30px;}
-        &--search{
+    }
+        &__brand{
+        color: white;
+        margin-left: 2%;
+        padding: 10px;
+        width: 20%;
+        cursor: pointer;
+        font-size: 30px;}
+        &__search{
+        width: 60%;
         display: flex;
         align-items: center;
         justify-content: space-around;
@@ -41,17 +43,23 @@ $serch-bar-height: 36px;
             border: $serch-bar-border;
             background-color: $serch-bar-color;
         }}
-    }
+    
     &__icons{
         color: wheat;
-        width: 20%;
+        max-width: 20%;
         height: 100%;
         display: flex;
         align-items: center;
         justify-content: space-around;
         text-align: right;  
         margin: 1.7em 0.2em;    
-       .svg-inline--fa {
+        div{
+            width: 50%;
+            height: 100%;
+                   display: flex;
+        align-items: center;
+        justify-content: space-around;
+                   .svg-inline--fa {
         height: 20px;
        }
         h4{
@@ -60,6 +68,7 @@ $serch-bar-height: 36px;
                 color: white;
             }
         }   
+        }
    
     }
 }
