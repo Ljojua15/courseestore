@@ -1,0 +1,19 @@
+@use "../../../assets/mixins/mixins.scss" as *;
+.nav-bar{
+  margin-top: 16px;
+  padding: 10px;
+  box-shadow: 1px 0 14px 0 lightgrey;
+  height: 97%;
+  border-radius: 16px;
+  max-width: 200px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  &__title{
+    margin-bottom: 20px;
+    font-size: 32px;
+    color: #1f1e1e;
+  }
+}

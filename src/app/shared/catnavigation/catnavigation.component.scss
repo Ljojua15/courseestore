@@ -1,3 +1,5 @@
+@use "../../../assets/mixins/mixins.scss" as *;
+
 .catnavigation {
   width: 100%;
   background-color: #1f1e1e;
@@ -14,23 +16,8 @@
       height: 32px;
       font-size: 20px;
       font-weight: bold;
-
-      &::after{
-        content: "";
-        display: block;
-        bottom: 0;
-        left: 0;
-        height: 0.2em;
-        background-color: green;
-        transform: scaleX(0);
-        transition-property: transform;
-        transition-duration: 0.5s;
-      }
-      &:hover{
-      &::after{
-        transform: scaleX(1.1);
-      }
-             }
     }
+    @include underline(1.1)
+
   }
 }
