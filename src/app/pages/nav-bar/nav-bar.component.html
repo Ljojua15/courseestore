@@ -6,21 +6,16 @@
   </div>
 
   <div class="nav-bar__accordion">
-    <div class="nav-bar__accordion__item">
-      <div class="nav-bar__accordion__item__header">
-        <button type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
-          <div>
-            <a href="#">Category</a>
-          </div>
+    <div class="nav-bar__accordion__item" *ngFor="let category of getCategories(); let i = index">
+      <div class="nav-bar__accordion__item__header" >
+        <button type="button" data-bs-toggle="collapse" [attr.data-bs-target]="'#collapse' + i">
+            <a href="#">{{category.category}}</a>
         </button>
       </div>
-      <div id="collapseOne" class="nav-bar__accordion__item__body collapse show" data-bs-parent="#accardionExample">
-        <div>
+      <div [id]="'collapse' + i" class="nav-bar__accordion__item__body collapse show" >
           <ul>
-            <li>item1</li>
-            <li>item1</li>
+            <li *ngFor="let sub of getCategories(category.id)"><a href="#">{{ sub.category }}</a></li>
           </ul>
-        </div>
       </div>
     </div>
   </div>

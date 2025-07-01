@@ -16,4 +16,37 @@
     font-size: 32px;
     color: #1f1e1e;
   }
+  &__accordion{
+    &__item{
+      &__header{
+        button{
+          border: unset;
+          padding: 10px 20px;
+          margin-bottom: 10px;
+          border-radius: 10px;
+          background-color: #0e0e0e;
+          a{
+            text-decoration: unset;
+          }
+        }
+      }
+
+      &__body{
+         ul{
+          border: unset;
+
+          margin-bottom: 10px;
+          li{
+            padding: 4px 20px;
+            cursor: pointer;
+            @include flex(center, center);
+            a{
+              text-decoration: unset;
+              @include underline(1.05)
+            }
+          }
+        }
+      }
+    }
+  }
 }
