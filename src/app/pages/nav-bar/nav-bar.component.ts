@@ -17,7 +17,6 @@ export class NavBarComponent implements OnInit {
 
   ngOnInit(): void {
     this.category = this.categoryService.getAllCategories()
-    console.log(this.getCategories(3),' test')
   }
 
   getCategories(parentId?: number):ICategory[] {

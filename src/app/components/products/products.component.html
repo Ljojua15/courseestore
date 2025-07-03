@@ -1,9 +1,10 @@
 <div class="products">
-  <div class="mx-5 p-3 products__content" >
-    <div class="products__content--img"><img src="./assets/images/shop-1.jpg" alt="*"></div>
-    <div>
-      <h4><a href="#">Jacket</a></h4>
-      <p>$45</p>
+  <div *ngFor="let prod of products" class="mx-5 p-3 products__content" >
+    <div class="products__content--img"><img [src]="CONST_IMAGES+prod.id+'.jpg'" alt="*"></div>
+    <div class="products__content--pricing">
+      <h4><a href="#">{{prod.name}}</a></h4>
+      <p>{{prod.price | currency}}</p>
     </div>
+    <estore-rating [scoreCalc]="prod.rating" />
   </div>
 </div>
