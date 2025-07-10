@@ -13,6 +13,9 @@ export class CategoryService {
 
   public CategoryConfig$: Observable<ICategory[]> = this.http.getCategoris();
 
+  getAllCategories(): ICategory[] {
+    return CategoryConfig;
+  }
 
 
 

@@ -16,20 +16,13 @@ export class NavBarComponent {
   public category: ICategory[] = [];
   private categoryService = inject(CategoryService)
 
-  public CategoryConfig$: Observable<ICategory[]> = this.categoryService.CategoryConfig$.pipe(
-    map((x) => {
-      console.log(x);
-      const categories = x.filter(category => console.log(category?.category, 'test'));
-      return {
-        ...x,
-
-      }
-    })
-  );
-
+  ngOnInit(): void {
+    this.category = this.categoryService.getAllCategories()
+  }
 
   getCategories(parentId?: number):ICategory[] {
     return this.category.filter(category => category.subcategory === parentId)
   }
+
 
 }
