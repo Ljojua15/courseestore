@@ -1,14 +1,19 @@
-import { Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import {ICategory} from '../interfaces/category.interface';
 import {CategoryConfig} from '../configs/category.config';
+import { HttpService } from './http.service';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CategoryService {
 
-  getAllCategories(): ICategory[] {
-    return CategoryConfig;
-  }
+  private http = inject(HttpService);
+
+  public CategoryConfig$: Observable<ICategory[]> = this.http.getCategoris();
+
+
+
 
 }

@@ -6,7 +6,7 @@ import {RatingComponent} from './shared/rating/rating.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, RatingComponent],
+  imports: [RouterOutlet],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
