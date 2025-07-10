@@ -4,6 +4,7 @@ export const CategoryConfig:ICategory[] =[
   {
     id:1,
     category:'Men'
+    
   },
   {
     id:2,
@@ -16,22 +17,22 @@ export const CategoryConfig:ICategory[] =[
   {
     id:4,
     category:'Shoes',
-    subcategory: 1
+    parent_category_id: 1
   },
   {
     id:5,
     category:'toys',
-    subcategory: 3
+    parent_category_id: 3
   },
   {
     id:6,
     category:'dress',
-    subcategory: 2
+    parent_category_id: 2
   },
   {
     id:7,
     category:'Shoes',
-    subcategory: 3
+    parent_category_id: 3
   }
 
 ]

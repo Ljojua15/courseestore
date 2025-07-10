@@ -12,7 +12,7 @@ private http = inject(HttpClient);
 
 private apiUrl = 'http://localhost:5001';
 
-getCategoris() : Observable<ICategory[]> {
+getCategoris$() : Observable<ICategory[]> {
   return this.http.get<ICategory[]>(`${this.apiUrl}/productCategoris`)
 }
 

@@ -4,8 +4,8 @@
       category
     </h3>
   </div>
-  <div class="nav-bar__accordion">
-    <div class="nav-bar__accordion__item" *ngFor="let category of getCategories(); let i = index">
+  <div class="nav-bar__accordion" *ngIf="allCategories$ | async as allCategories">
+    <div class="nav-bar__accordion__item" *ngFor="let category of allCategories; let i = index">
       <div class="nav-bar__accordion__item__header" >
         <button type="button" data-bs-toggle="collapse" [attr.data-bs-target]="'#collapse' + i">
             <a href="#">{{category.category}}</a>
@@ -15,8 +15,10 @@
       </div>
       <div [id]="'collapse' + i" class="nav-bar__accordion__item__body collapse show" >
           <ul>
-            <li *ngFor="let sub of getCategories(category.id)"><a href="#">{{ sub.category }}</a></li>
+            <li *ngFor="let sub of category.children"><a href="#">{{ sub.category }}</a></li>
           </ul>
       </div>
     </div>
   </div>
+
+  

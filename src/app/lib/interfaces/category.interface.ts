@@ -1,5 +1,5 @@
 export interface ICategory {
   id: number;
   category: string;
-  subcategory?: number;
+  parent_category_id?: number;
 }

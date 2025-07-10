@@ -13,16 +13,27 @@ import { map, Observable } from 'rxjs';
   styleUrl: './nav-bar.component.scss'
 })
 export class NavBarComponent {
-  public category: ICategory[] = [];
-  private categoryService = inject(CategoryService)
 
-  ngOnInit(): void {
-    this.category = this.categoryService.getAllCategories()
-  }
+  private readonly categoryService = inject(CategoryService)
 
-  getCategories(parentId?: number):ICategory[] {
-    return this.category.filter(category => category.subcategory === parentId)
-  }
+  public allCategories$ = this.categoryService.CategoryConfig$.pipe(
+    map((res) => {
+
+      const mainCategory = res.filter(c => !c.parent_category_id)
+      const childCategory = res.filter(c => c.parent_category_id)
+      
+      const withGroups = mainCategory.map(p => {
+        return {
+          ...p,
+          children: childCategory.filter(c => p.id === c.parent_category_id)
+        }
+      })
+
+
+      
+      return withGroups
+    })
+  )
 
 
 }

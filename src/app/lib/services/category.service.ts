@@ -11,7 +11,7 @@ export class CategoryService {
 
   private http = inject(HttpService);
 
-  public CategoryConfig$: Observable<ICategory[]> = this.http.getCategoris();
+  public CategoryConfig$: Observable<ICategory[]> = this.http.getCategoris$();
 
   getAllCategories(): ICategory[] {
     return CategoryConfig;
