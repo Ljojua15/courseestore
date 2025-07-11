@@ -1,4 +1,4 @@
-import { inject, Injectable } from '@angular/core';
+import { inject, Injectable, signal } from '@angular/core';
 import {ICategory} from '../interfaces/category.interface';
 import {CategoryConfig} from '../configs/category.config';
 import { HttpService } from './http.service';
@@ -10,6 +10,8 @@ import { Observable } from 'rxjs';
 export class CategoryService {
 
   private http = inject(HttpService);
+
+  public $topLevelCategory$ = signal<ICategory[]>([])
 
   public CategoryConfig$: Observable<ICategory[]> = this.http.getCategoris$();
 

@@ -21,16 +21,17 @@ export class NavBarComponent {
 
       const mainCategory = res.filter(c => !c.parent_category_id)
       const childCategory = res.filter(c => c.parent_category_id)
-      
-      const withGroups = mainCategory.map(p => {
-        return {
-          ...p,
-          children: childCategory.filter(c => p.id === c.parent_category_id)
-        }
-      })
+      const withGroups = mainCategory.map((item, i) => {
+      const next = i + 1;
+      const children = childCategory.filter(c => c.parent_category_id === next);
 
+      return {
+        ...item,
+        children
+      };
+    });
+    this.categoryService.$topLevelCategory$.set(mainCategory)
 
-      
       return withGroups
     })
   )

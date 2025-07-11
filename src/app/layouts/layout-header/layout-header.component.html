@@ -5,7 +5,7 @@
     </div>
     <div class="layout-header__search p-0 my-4 w-50 h-30 bg-white">
       <select class="drowdown p-0 m-0">
-        <option *ngFor="let option of options">{{ option }}</option>
+        <option *ngFor="let option of $options$()">{{ option.category }}</option>
       </select>
       <input class="form-control search-box" placeholder="search..." />
       <button class="search-button h-30">

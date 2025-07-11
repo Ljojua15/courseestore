@@ -1,8 +1,6 @@
-<div class="catnavigation">
+<div class="catnavigation" >
   <ul>
-    <li><a href="#">Men</a></li>
-    <li><a href="#">Women</a></li>
-    <li><a href="#">kids</a></li>
+    <li *ngFor="let cat of $topLevelCategory$()"><a href="#">{{cat.category}}</a></li>
     <li><a href="#">Best Offers</a></li>
   </ul>
 </div>
