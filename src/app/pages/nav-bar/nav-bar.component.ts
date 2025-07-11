@@ -16,25 +16,9 @@ export class NavBarComponent {
 
   private readonly categoryService = inject(CategoryService)
 
-  public allCategories$ = this.categoryService.CategoryConfig$.pipe(
-    map((res) => {
-
-      const mainCategory = res.filter(c => !c.parent_category_id)
-      const childCategory = res.filter(c => c.parent_category_id)
-      const withGroups = mainCategory.map((item, i) => {
-      const next = i + 1;
-      const children = childCategory.filter(c => c.parent_category_id === next);
-
-      return {
-        ...item,
-        children
-      };
-    });
-    this.categoryService.$topLevelCategory$.set(mainCategory)
-
-      return withGroups
-    })
-  )
+  public allCategories$ = this.categoryService.CategoryConfig$
+  
+  $test$ = this.categoryService.$topLevelCategory$
 
 
 }

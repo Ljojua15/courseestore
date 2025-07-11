@@ -3,8 +3,7 @@ import {ICategory} from '../interfaces/category.interface';
 export const CategoryConfig:ICategory[] =[
   {
     id:1,
-    category:'Men'
-    
+    category:'Men',
   },
   {
     id:2,
